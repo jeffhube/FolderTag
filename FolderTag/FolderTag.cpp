@@ -35,7 +35,7 @@ INT_PTR CALLBACK DialogProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lPara
 
 			SetWindowPos(hwndDlg, HWND_TOP, rcOwner.left + (rc.right / 2), rcOwner.top + (rc.bottom / 2), 0, 0, SWP_NOSIZE);
 
-			SendMessage(hwndDlg, WM_SETICON, ICON_SMALL, (LPARAM)LoadIcon(NULL, MAKEINTRESOURCE(IDI_APPLICATION)));
+			SendMessage(hwndDlg, WM_SETICON, ICON_SMALL, (LPARAM) LoadIcon(NULL, MAKEINTRESOURCE(IDI_APPLICATION)));
 			SendMessage(GetDlgItem(hwndDlg, IDC_EDITTAG), EM_LIMITTEXT, MAX_TAG_LENGTH, 0);
 		}
 		return TRUE;
@@ -70,7 +70,7 @@ LPTSTR GetFormattedMessage(LPTSTR message, ...)
 		message,
 		0,
 		0,
-		(LPTSTR)&buffer,
+		(LPTSTR) &buffer,
 		0,
 		&args);
 
@@ -113,7 +113,7 @@ int _tmain(int argc, _TCHAR* argv [])
 		return 0;
 	}
 
-	if (IDOK != DialogBox(NULL, MAKEINTRESOURCE(IDD_ABOUT), NULL, DialogProc))
+	if (IDOK != DialogBox(NULL, MAKEINTRESOURCE(IDD_TAGPROMPT), NULL, DialogProc))
 	{
 		return 0;
 	}
